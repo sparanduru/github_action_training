@@ -1,0 +1,19 @@
+name: Thir Workflow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello World! - First Job"
+      - name: Print goodbye
+        run: echo "Done - bye!"
+  second-job:
+    needs : first-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello World!- Second Job"
+      - name: Print goodbye
+        run: echo "Done - bye!"
+ 
