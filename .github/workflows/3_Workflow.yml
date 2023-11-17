@@ -16,4 +16,13 @@ jobs:
         run: echo "Hello World!- Second Job"
       - name: Print goodbye
         run: echo "Done - bye!"
+  thrid-job:
+    needs : [ "first-job" , "second-job"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greeting
+        run: echo "Hello World!- third Job"
+      - name: Print goodbye
+        run: echo "Done - bye!"
+ 
  
